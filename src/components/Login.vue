@@ -15,7 +15,8 @@
         <el-form-item prop="password">
           <el-input
             v-model="loginForm.password"
-            prefix-icon="iconfont icon-3702mima"
+            prefix-icon="iconfont icon-3702mim
+            a"
             type="password"
           ></el-input>
         </el-form-item>
@@ -41,12 +42,30 @@ export default {
       //用户名和密码输入验证
       rules: {
         username: [
-          { required: true, message: "请您输入用户名", trigger: "blur" },
-          { min: 3, max: 10, message: "长度在 3 到 5 个字符", trigger: "blur" }
+          {
+            required: true,
+            message: "请您输入用户名",
+            trigger: "blur"
+          },
+          {
+            min: 3,
+            max: 10,
+            message: "长度在 3 到 10 个字符",
+            trigger: "blur"
+          }
         ],
         password: [
-          { required: true, message: "请您输入密码", trigger: "blur" },
-          { min: 6, max: 18, message: "长度在 6 到 18 个字符", trigger: "blur" }
+          {
+            required: true,
+            message: "请您输入密码",
+            trigger: "blur"
+          },
+          {
+            min: 6,
+            max: 18,
+            message: "长度在 6 到 18 个字符",
+            trigger: "blur"
+          }
         ]
       }
     };
@@ -62,7 +81,7 @@ export default {
         // 登录请求
         if (!val) return;
         const { data: res } = await this.$http.post("login", this.loginForm);
-        console.log(res);
+        // console.log(res);
         // console.log(this.rules);
         if (res.meta.status != 200) return this.$message.error("登录失败！");
         this.$message.success("登录成功！");
@@ -81,6 +100,7 @@ export default {
   background-color: #2b4b6b;
   height: 100%;
 }
+
 .login_box {
   width: 450px;
   height: 300px;
@@ -91,6 +111,7 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .avatar_box {
   height: 150px;
   width: 150px;
@@ -104,6 +125,7 @@ export default {
   // 显示阴影
   box-shadow: 0 0 10px #ddd;
   background-color: #fff;
+
   img {
     height: 100%;
     width: 100%;
@@ -111,6 +133,7 @@ export default {
     background-color: #eee;
   }
 }
+
 .login_form {
   position: absolute;
   bottom: 0;
@@ -118,6 +141,7 @@ export default {
   padding: 0 20px;
   box-sizing: border-box;
 }
+
 .login_reset {
   display: flex;
   justify-content: flex-end;

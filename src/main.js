@@ -3,9 +3,10 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './assets/css/globe.css'
-import {form,formitem,input,Button} from 'element-ui'
+import {form,formitem,input,Button,header,aside,main} from 'element-ui'
 // 导入字体图标
 import './assets/fonts/iconfont.css'
+
 
 // 引入ElementUI全局样式
 import ElementUI from 'element-ui';
@@ -19,6 +20,14 @@ Vue.prototype.$message = Message;
 import axios from 'axios'
 // 配置请求的根路径
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/';
+
+// 设置拦截请求
+axios.interceptors.request.use(config=>{
+  config.headers.Authorization = window.sessionStorage.getItem('token')
+  return config
+  console.log(config);
+  
+})
 // 把axios挂在到Vue的原型对象上
 Vue.prototype.$http = axios;
 
