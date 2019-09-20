@@ -7,7 +7,13 @@ import Welcome from './components/Welcome.vue'
 import users from './components/user/users.vue'
 import Rights from './components/Power/Rights.vue'
 import Roles from './components/Power/Roles.vue'
+import Cate from './components/goods/Cate.vue'
+import Goods from './components/goods/Goods.vue'
+import Params from './components/goods/Params.vue'
 
+// 订单管理
+import Orders from './components/Orders/Orders.vue'
+ 
 Vue.use(Router)
 
 const router = new Router({
@@ -19,7 +25,11 @@ const router = new Router({
         { path: '/welcome', component: Welcome },
         { path: '/users', component: users },
         { path: '/rights', component: Rights },
-        { path: '/roles', component: Roles }
+        { path: '/roles', component: Roles },
+        { path: '/categories', component: Cate },
+        { path: '/goods', component: Goods },
+        { path: '/params', component: Params },
+        { path: '/orders', component: Orders },
 
 
       ]
