@@ -13,6 +13,9 @@ import Params from './components/goods/Params.vue'
 
 // 订单管理
 import Orders from './components/Orders/Orders.vue'
+
+// 数据报表
+import Reports from './components/Reports/Reports.vue'
  
 Vue.use(Router)
 
@@ -30,8 +33,7 @@ const router = new Router({
         { path: '/goods', component: Goods },
         { path: '/params', component: Params },
         { path: '/orders', component: Orders },
-
-
+        { path: '/reports', component: Reports },
       ]
     },
 
